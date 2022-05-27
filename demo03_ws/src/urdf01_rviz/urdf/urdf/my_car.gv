@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"footprint" [label="footprint"];
+"base_link" [label="base_link"];
+"back_wheel" [label="back_wheel"];
+"front_wheel" [label="front_wheel"];
+"left_wheel" [label="left_wheel"];
+"right_wheel" [label="right_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"footprint" -> "foot2base" [label="xyz: 0 0 0.07 \nrpy: 0 -0 0"]
+"foot2base" -> "base_link"
+"base_link" -> "back2base" [label="xyz: -0.13 0 -0.06 \nrpy: 0 -0 0"]
+"back2base" -> "back_wheel"
+"base_link" -> "front2base" [label="xyz: 0.13 0 -0.06 \nrpy: 0 -0 0"]
+"front2base" -> "front_wheel"
+"base_link" -> "left2base" [label="xyz: 0 0.1575 -0.03 \nrpy: 0 -0 0"]
+"left2base" -> "left_wheel"
+"base_link" -> "right2base" [label="xyz: 0 -0.1575 -0.03 \nrpy: 0 -0 0"]
+"right2base" -> "right_wheel"
+}

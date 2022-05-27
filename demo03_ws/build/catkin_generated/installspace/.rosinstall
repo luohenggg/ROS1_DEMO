@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pi/demo03_ws/install/setup.sh

@@ -1,0 +1,10 @@
+<launch>
+          <!-- 需求：演示 arg 的使用，需要设置多个参数，这个参数使用的是同一个值，怎么设置？ -->
+          <!-- "$(arg name)"是固定格式 -->
+          <arg name="car_length" default="0.5" />
+
+          <param name="A" value="$(arg car_length)" />
+          <param name="B" value="$(arg car_length)" />
+          <param name="C" value="$(arg car_length)" />
+          <!-- 在命令行里面修改的时候，记得arg的name后面加上冒号：，roslaunch launch01_basic args.launch car_length:=0.8 -->
+</launch>

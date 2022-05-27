@@ -1,0 +1,26 @@
+<robot name="mycar" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="camera_length" value="0.05" />
+    <xacro:property name="camera_width" value="0.03" />
+    <xacro:property name="camera_height" value="0.05" />
+
+    <xacro:property name="camera_joint_x" value="${base_radius - camera_length/2 }" />
+    <xacro:property name="camera_joint_y" value="0" />
+    <xacro:property name="camera_joint_z" value="${base_length/2 + camera_height/2 }" />
+    
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="${camera_length} ${camera_width} ${camera_height}" />
+            </geometry>
+            <material name="camera_color">
+                <color rgba="0.8 0.5 0.5 0.8" />
+            </material>
+        </visual>
+    </link>
+    <joint name="base2camera" type="fixed">
+        <parent link="base_link" />
+        <child link="camera" />
+        <origin xyz="${camera_joint_x} ${camera_joint_y} ${camera_joint_z}" />
+    </joint>
+</robot>

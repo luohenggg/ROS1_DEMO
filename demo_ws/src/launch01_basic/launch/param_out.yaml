@@ -1,0 +1,14 @@
+bk_G: 20
+bk_R: 10
+my_turtle: {background_b: 255, background_g: 86, background_r: 69, bk_B: 100, bk_G: 20,
+  bk_R: 10, param_B: 3.14}
+param_A: 100
+rosdistro: 'melodic
+
+  '
+roslaunch:
+  uris: {host_pi__37583: 'http://pi:37583/', host_pi__40021: 'http://pi:40021/', host_pi__45631: 'http://pi:45631/'}
+rosversion: '1.14.13
+
+  '
+run_id: 7dcd611e-d76f-11ec-ab70-2cfda1855ab6
