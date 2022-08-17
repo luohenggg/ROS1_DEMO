@@ -1,8 +1,0 @@
-prefix=/home/pi/demo_ws/install
-
-Name: plumbing_service_client
-Description: Description of plumbing_service_client
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 

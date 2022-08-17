@@ -1,2 +1,2 @@
-
--DCATKIN_DEVEL_PREFIX=/home/pi/demo03_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pi/demo03_ws/install -G Unix Makefiles
+urdf01_rviz:urdf_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/lh/work/ROS_demo_ws_XuZuoZhao/demo03_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lh/work/ROS_demo_ws_XuZuoZhao/demo03_ws/install -G Unix Makefiles

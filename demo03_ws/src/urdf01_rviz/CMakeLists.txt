@@ -9,7 +9,7 @@ project(urdf01_rviz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   urdf
-  xarco
+  xacro
 )
 
 ## System dependencies are found with CMake's conventions

@@ -1,2 +1,0 @@
-hello_vscode:plumbing_apis:plumbing_my:plumbing_param:plumbing_pub_sub:plumbing_service_client:plumbing_test
--DCATKIN_DEVEL_PREFIX=/home/pi/demo_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pi/demo_ws/install -G Unix Makefiles
