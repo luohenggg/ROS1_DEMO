@@ -1,6 +1,9 @@
 demo03_ws/build
 demo03_ws/install
+demo03_ws/devel
 demo02_ws/build
 demo02_ws/install
+demo02_ws/devel
 demo_ws/build
 demo_ws/install
+demo_ws/devel
