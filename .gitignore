@@ -1,3 +1,6 @@
+demo04_ws/build
+demo04_ws/install
+demo04_ws/devel
 demo03_ws/build
 demo03_ws/install
 demo03_ws/devel
@@ -7,3 +10,6 @@ demo02_ws/devel
 demo_ws/build
 demo_ws/install
 demo_ws/devel
+daohang/build
+daohang/install
+daohang/devel

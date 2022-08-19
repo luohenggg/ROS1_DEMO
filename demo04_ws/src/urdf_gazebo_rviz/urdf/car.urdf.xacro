@@ -1,0 +1,14 @@
+<robot name="mycar" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- 演示文件包含 -->
+    <xacro:include filename="sensor/head.xacro" />
+    <xacro:include filename="sensor/demo04_base.urdf.xacro" />
+    <xacro:include filename="sensor/demo05_camera.urdf.xacro" />
+    <xacro:include filename="sensor/demo06_laser.urdf.xacro" />
+    <xacro:include filename="sensor/move.urdf.xacro" />
+    <!-- 雷达 -->
+    <xacro:include filename="sensor/laser.xacro" />
+    <!-- 摄像头 -->
+    <xacro:include filename="gazebo/camera.xacro" />
+    <!-- kinect -->
+    <xacro:include filename="gazebo/kinect.xacro" />
+</robot>

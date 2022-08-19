@@ -1,0 +1,70 @@
+<!-- 设置gmapping相关节点 -->
+<launch>
+    <!-- 是否使用仿真，是的话就是true -->
+    <param name="use_sim_time" value="true"/>
+    <!-- gmapping的节点 -->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+        <!-- 设置雷达话题 -->
+        <!-- to指向的是你的scan名字 -->
+        <remap from="scan" to="scan"/>
+
+        <!-- 关键参数：坐标系 -->
+        <!-- 
+            ~base_frame(string, default:"base_link")机器人基坐标系。
+            ~map_frame(string, default:"map")地图坐标系。
+            ~odom_frame(string, default:"odom")里程计坐标系。
+         -->
+        <param name="base_frame" value="base_footprint" />
+        <param name="map_frame" value="map" />
+        <param name="odom" value="odom" />
+
+        <!-- 地图更新间隔 -->
+        <param name="map_update_interval" value="5.0"/>
+        <!-- 雷达长度阈值，根据实际的进行修改 -->
+        <param name="maxUrange" value="16.0"/>
+        <param name="sigma" value="0.05"/>
+        <param name="kernelSize" value="1"/>
+        <param name="lstep" value="0.05"/>
+        <param name="astep" value="0.05"/>
+        <param name="iterations" value="5"/>
+        <param name="lsigma" value="0.075"/>
+        <param name="ogain" value="3.0"/>
+        <param name="lskip" value="0"/>
+        <param name="srr" value="0.1"/>
+        <param name="srt" value="0.2"/>
+        <param name="str" value="0.1"/>
+        <param name="stt" value="0.2"/>
+        <param name="linearUpdate" value="1.0"/>
+        <param name="angularUpdate" value="0.5"/>
+        <param name="temporalUpdate" value="3.0"/>
+        <param name="resampleThreshold" value="0.5"/>
+        <param name="particles" value="30"/>
+        <param name="xmin" value="-50.0"/>
+        <param name="ymin" value="-50.0"/>
+        <param name="xmax" value="50.0"/>
+        <param name="ymax" value="50.0"/>
+        <param name="delta" value="0.05"/>
+        <param name="llsamplerange" value="0.01"/>
+        <param name="llsamplestep" value="0.01"/>
+        <param name="lasamplerange" value="0.005"/>
+        <param name="lasamplestep" value="0.005"/>
+    </node>
+    <!-- 
+        所需的坐标变换
+        雷达坐标系→基坐标系
+        一般由 robot_state_publisher 或 static_transform_publisher 发布。
+
+        基坐标系→里程计坐标系
+        一般由里程计节点发布。
+     -->
+    <!--
+        rviz中显示urdf时，必须发布不同部件之间的 坐标系 关系
+        解决策略：ROS中提供了关于机器人模型显示的坐标发布相关节点（两个）
+        rosrun joint_state_publisher joint_state_publisher  #发布关节相关节点
+        rosrun robot_state_publisher robot_state_publisher  #发布机器人相关节点
+    -->
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+    <!--启动rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find nav_demo)/config/show_car.rviz" />
+</launch>

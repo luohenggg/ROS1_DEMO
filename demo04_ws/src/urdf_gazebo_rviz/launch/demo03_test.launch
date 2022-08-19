@@ -1,0 +1,22 @@
+<launch>
+
+    <!-- 1.需要在参数服务器中加载urdf -->
+    <param name="robot_description" textfile="$(find urdf_gazebo_rviz)/urdf/car.urdf" />
+
+    <!-- 2.启动 gazebo 仿真环境-->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+        <arg name="world_name" value="$(find urdf_gazebo_rviz)/worlds/box_house.world" />
+    </include>
+
+    <!-- 3.在 gazebo 中显示机器人模型 -->
+    <!-- 
+    在 Gazebo 中加载一个机器人模型，该功能由 gazebo_ros 下的 spawn_model 提供:
+    -urdf 加载的是 urdf 文件
+    -model mycar 模型名称是 mycar
+    -param robot_description 从参数 robot_description 中载入模型
+    -x 模型载入的 x 坐标
+    -y 模型载入的 y 坐标
+    -z 模型载入的 z 坐标
+    -->
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description"  />
+</launch>
